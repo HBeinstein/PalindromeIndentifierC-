@@ -1,19 +1,29 @@
-namespace Palindrome
+using System;
+
+namespace PalindromeCheck
 {
   public class Palindrome
   {
-    public bool IsPalindromeString(string userInput)
+    public string UserInput { get; set; }
+
+    public Palindrome(string userInput)
     {
-      string[] wordArray = string userInput;
-      string reverseArray = Array.Reverse(wordArray);
-      string reversedWord = String.Join("", reverseArray);
+      UserInput = userInput;
+    }
+
+    public string IsPalindromeString(string userInput)
+    {
+      // string[] wordArray = string userInput;
+      char[] wordArray = userInput.ToCharArray();
+      Array.Reverse(wordArray);
+      string reversedWord = String.Join("", wordArray);
       if (reversedWord == userInput)
     {
-      return true;
+      return "sure is";
     }
-      else
+    else
     {
-      return false
+      return "nope";
       }
     }  
   }
